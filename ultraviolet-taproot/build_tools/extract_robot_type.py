@@ -1,5 +1,4 @@
-# Copyright (c) 2020-2021 Advanced Robotics at the University of Washington <robomstr@uw.edu>
-#
+# Copyright (c) 2022 Team UltraViolet at New York University#
 # This file is part of ultraviolet-taproot.
 #
 # ultraviolet-taproot is free software: you can redistribute it and/or modify

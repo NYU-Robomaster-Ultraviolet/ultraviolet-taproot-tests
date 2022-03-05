@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 #
-# Copyright (c) 2020-2021 Advanced Robotics at the University of Washington <robomstr@uw.edu>
-#
+# Copyright (c) 2022 Team UltraViolet at New York University#
 # This file is part of ultraviolet-taproot.
 #
 # ultraviolet-taproot is free software: you can redistribute it and/or modify
@@ -34,7 +33,7 @@ options:\n\
     --update Adds licenses to files that don't have a license header (optional)"
 LICENSED_SOURCE_FILE_EXTENSIONS = ['.cpp', '.hpp', '.h']
 LICENSE_HEADER = '/*\n\
- * Copyright (c) 2020-2021 Advanced Robotics at the University of Washington <robomstr@uw.edu>\n\
+ * Copyright (c) 2022 Team UltraViolet at New York University\n\
  *\n\
  * This file is part of ultraviolet-taproot.\n\
  *\n\
