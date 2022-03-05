@@ -44,8 +44,9 @@
     <module>taproot:communication:gpio:digital</module>
     <module>taproot:communication:tcp-server</module>
 
-    <!-- Only supported on RoboMaster Development Board Type A -->
+    <!-- Only supported on RoboMaster Development Board Type A 
     <module>taproot:communication:sensors:mpu6500</module>
     <module>taproot:display</module>
+    -->
   </modules>
 </library>
