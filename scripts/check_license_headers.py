@@ -33,7 +33,7 @@ options:\n\
     --update Adds licenses to files that don't have a license header (optional)"
 LICENSED_SOURCE_FILE_EXTENSIONS = ['.cpp', '.hpp', '.h']
 LICENSE_HEADER = '/*\n\
- * Copyright (c) 2022 Team UltraViolet at New York University\n\
+ * Copyright (c) 2022 Team UltraViolet at New York University \n\
  *\n\
  * This file is part of ultraviolet-taproot.\n\
  *\n\
