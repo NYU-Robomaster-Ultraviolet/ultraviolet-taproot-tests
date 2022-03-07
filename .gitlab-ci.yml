@@ -51,7 +51,6 @@ Policy Checks:
   needs: []
   script:
     - python3 ./scripts/check_singleton_drivers.py ./ultraviolet-taproot/src/ 
-    - python3 ./scripts/check_license_headers.py
   variables:
     GIT_SUBMODULE_STRATEGY: none
   except: *verification_except
