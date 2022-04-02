@@ -41,6 +41,8 @@
 
 /* control includes ---------------------------------------------------------*/
 #include "tap/architecture/clock.hpp"
+//
+#include "control/robot_control.hpp"
 
 /* define timers here -------------------------------------------------------*/
 tap::arch::PeriodicMilliTimer sendMotorTimeout(2);
@@ -69,6 +71,7 @@ int main()
 
     Board::initialize();
     initializeIo(drivers);
+    src::Control::initializeSubsystemCommands(drivers);
 
 #ifdef PLATFORM_HOSTED
     tap::motorsim::SimHandler::resetMotorSims();
