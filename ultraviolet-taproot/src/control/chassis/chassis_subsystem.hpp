@@ -44,8 +44,6 @@ class ChassisSubsystem : public tap::control::Subsystem
 
         mockable void setDesiredOutput(int16_t leftSideOutput, int16_t rightSideOutput);
 
-        void refresh() override;
-
         const tap::motor::DjiMotor &getLeftFrontMotor() const
         {
             return leftFrontMotor;

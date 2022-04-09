@@ -42,7 +42,7 @@
 /* control includes ---------------------------------------------------------*/
 #include "tap/architecture/clock.hpp"
 //
-#include "control/robot_control.hpp"
+#include "robots/robot_control.hpp"
 
 /* define timers here -------------------------------------------------------*/
 tap::arch::PeriodicMilliTimer sendMotorTimeout(2);

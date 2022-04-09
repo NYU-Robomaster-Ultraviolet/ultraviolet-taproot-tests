@@ -3,14 +3,15 @@
 
 #include "tap/control/command.hpp"
 #include "chassis_subsystem.hpp"
+#include "drivers.hpp"
 
-namespace src::chassis
+namespace src::Chassis
 {
 class ChassisTankDriveCommand : public tap::control::Command
 {
     public:
 
-        ChassisTankDriveCommand(src::Chassis::ChassisSubsystem *const chassis, tap::Drivers *drivers);
+        ChassisTankDriveCommand(ChassisSubsystem *chassis, src::Drivers *drivers);
 
         ChassisTankDriveCommand(const ChassisTankDriveCommand &other) = delete;
 
@@ -22,14 +23,13 @@ class ChassisTankDriveCommand : public tap::control::Command
 
         void execute() override;
 
-        void end(bool) override;
+        void end(bool interrupted) override;
 
         bool isFinished() const override;
 
     private:
-        src::Chassis::ChassisSubsystem *const chassis;
-
-        tap::Drivers *drivers;
+        ChassisSubsystem *const chassis;
+        src::Drivers *drivers;
 };
 }
 

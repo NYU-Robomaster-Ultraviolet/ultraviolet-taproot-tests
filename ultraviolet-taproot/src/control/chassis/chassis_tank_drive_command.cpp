@@ -1,13 +1,17 @@
 #include "chassis_tank_drive_command.hpp"
 
 #include "tap/algorithms/math_user_utils.hpp"
-#include "tap/drivers.hpp"
+#include "drivers.hpp"
 #include "tap/errors/create_errors.hpp"
 
 namespace src::Chassis
 {
 
-ChassisTankDriveCommand()
+ChassisTankDriveCommand::ChassisTankDriveCommand(ChassisSubsystem* chassis, src::Drivers* drivers)
+: drivers(drivers), chassis(chassis)
+{
+    addSubsystemRequirement(dynamic_cast<tap::control::Subsystem*>(chassis));
+}
 
 void ChassisTankDriveCommand::initialize() {}
 

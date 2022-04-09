@@ -32,7 +32,7 @@ namespace StandardControl {
 ChassisSubsystem chassis(drivers());
 
 // Define commands here ---------------------------------------------------
-ChassisTankDriveCommand chassisDriveCommand(drivers(), &chassis);
+ChassisTankDriveCommand chassisDriveCommand(&chassis, drivers());
 
 // Define command mappings here -------------------------------------------
 HoldCommandMapping leftSwitchUp(
@@ -52,16 +52,12 @@ void initializeSubsystems() {
 
 // Set default command here -----------------------------------------------
 void setDefaultCommands(src::Drivers *) {
-    // no default commands should be set
+    //chassis.setDefaultCommand(&chassisDriveCommand);
 }
 
 // Set commands scheduled on startup
 void startupCommands(src::Drivers *drivers) {
-    // no startup commands should be set
-    // yet...
-    // TODO: Possibly add some sort of hardware test command
-    //       that will move all the standard's parts so we
-    //       can make sure they're fully operational.
+    
 }
 
 // Register IO mappings here -----------------------------------------------
