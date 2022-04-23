@@ -34,4 +34,9 @@ bool ChassisTankDriveCommand::isFinished() const
     return false;
 }
 
+bool ChassisTankDriveCommand::isReady()
+{
+    return true;
+}
+
 }

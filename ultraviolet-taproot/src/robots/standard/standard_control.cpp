@@ -52,7 +52,7 @@ void initializeSubsystems() {
 
 // Set default command here -----------------------------------------------
 void setDefaultCommands(src::Drivers *) {
-    //chassis.setDefaultCommand(&chassisDriveCommand);
+    chassis.setDefaultCommand(&chassisDriveCommand);
 }
 
 // Set commands scheduled on startup
