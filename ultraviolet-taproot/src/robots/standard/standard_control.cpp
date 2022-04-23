@@ -32,7 +32,7 @@ namespace StandardControl {
 ChassisSubsystem chassis(drivers());
 
 // Define commands here ---------------------------------------------------
-ChassisTankDriveCommand chassisDriveCommand(&chassis, drivers());
+ChassisTankDriveCommand chassisDriveCommand(drivers(), &chassis);
 
 // Define command mappings here -------------------------------------------
 HoldCommandMapping leftSwitchUp(

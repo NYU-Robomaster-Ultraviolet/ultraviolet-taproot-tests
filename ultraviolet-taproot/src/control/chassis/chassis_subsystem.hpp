@@ -21,7 +21,8 @@ class ChassisSubsystem : public tap::control::Subsystem
         static constexpr float MAX_CURRENT_OUTPUT = 8000.0f;
 
     //constructor intializes default values
-        ChassisSubsystem(tap::Drivers *drivers) : tap::control::Subsystem(drivers),
+        ChassisSubsystem(tap::Drivers *drivers) : 
+            tap::control::Subsystem(drivers),
             leftFrontMotor(drivers, LEFT_FRONT_MOTOR_ID, MOTOR_CAN_BUS, false, "left front drive motor"),
             leftBackMotor(drivers, LEFT_BACK_MOTOR_ID, MOTOR_CAN_BUS, false, "left back drive motor"),
             rightFrontMotor(drivers, RIGHT_BACK_MOTOR_ID, MOTOR_CAN_BUS, false, "right front drive motor"),
@@ -31,12 +32,7 @@ class ChassisSubsystem : public tap::control::Subsystem
             rightFrontOutput(0),
             rightBackOutput(0)
         {}
-        //more general class stuff
-        ChassisSubsystem(const ChassisSubsystem &other) = delete;
 
-        ChassisSubsystem &operator = (const ChassisSubsystem &other) = delete;
-
-        ~ChassisSubsystem() = default;
         //needed for all subsystems: virtual functions in tap::control::Subsystem so must be overriden
         void initialize() override;
         

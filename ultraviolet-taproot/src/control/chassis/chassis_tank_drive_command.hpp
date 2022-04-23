@@ -11,24 +11,22 @@ class ChassisTankDriveCommand : public tap::control::Command
 {
     public:
 
-        ChassisTankDriveCommand(ChassisSubsystem *chassis, src::Drivers *drivers);
-
-        ChassisTankDriveCommand(const ChassisTankDriveCommand &other) = delete;
-
-        ChassisTankDriveCommand &operator = (const ChassisTankDriveCommand &other) = delete;
+        ChassisTankDriveCommand(src::Drivers *drivers, ChassisSubsystem *chassis);
 
         void initialize() override;
-
-        const char *getName() const { return "chassis tank drive command"; }
 
         void execute() override;
 
         void end(bool interrupted) override;
 
+        bool isReady() override;
+
         bool isFinished() const override;
 
+        const char *getName() const { return "chassis tank drive command"; }
+
     private:
-        ChassisSubsystem *const chassis;
+        ChassisSubsystem * chassis;
         src::Drivers *drivers;
 };
 }

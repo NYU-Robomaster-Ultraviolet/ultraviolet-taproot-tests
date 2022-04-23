@@ -8,6 +8,7 @@ using namespace tap::algorithms;
 
 namespace src::Chassis
 {
+
 void ChassisSubsystem::initialize()
 {
     leftFrontMotor.initialize();

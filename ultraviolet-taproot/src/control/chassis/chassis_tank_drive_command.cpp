@@ -7,7 +7,7 @@
 namespace src::Chassis
 {
 
-ChassisTankDriveCommand::ChassisTankDriveCommand(ChassisSubsystem* chassis, src::Drivers* drivers)
+ChassisTankDriveCommand::ChassisTankDriveCommand(src::Drivers* drivers, ChassisSubsystem* chassis)
 : drivers(drivers), chassis(chassis)
 {
     addSubsystemRequirement(dynamic_cast<tap::control::Subsystem*>(chassis));
@@ -17,6 +17,8 @@ void ChassisTankDriveCommand::initialize() {}
 
 void ChassisTankDriveCommand::execute()
 {   
+    drivers->leds.set(tap::gpio::Leds::Red, true);
+    drivers->leds.set(tap::gpio::Leds::Blue, true);
     int16_t leftInput = drivers->remote.getChannel(tap::Remote::Channel::LEFT_VERTICAL) * ChassisSubsystem::MAX_CURRENT_OUTPUT;
     int16_t rightInput = drivers->remote.getChannel(tap::Remote::Channel::RIGHT_VERTICAL) * ChassisSubsystem::MAX_CURRENT_OUTPUT;
     chassis->setDesiredOutput(leftInput, rightInput);
