@@ -25,7 +25,7 @@ class ChassisSubsystem : public tap::control::Subsystem
             tap::control::Subsystem(drivers),
             leftFrontMotor(drivers, LEFT_FRONT_MOTOR_ID, MOTOR_CAN_BUS, false, "left front drive motor"),
             leftBackMotor(drivers, LEFT_BACK_MOTOR_ID, MOTOR_CAN_BUS, false, "left back drive motor"),
-            rightFrontMotor(drivers, RIGHT_BACK_MOTOR_ID, MOTOR_CAN_BUS, false, "right front drive motor"),
+            rightFrontMotor(drivers, RIGHT_FRONT_MOTOR_ID, MOTOR_CAN_BUS, false, "right front drive motor"),
             rightBackMotor(drivers, RIGHT_BACK_MOTOR_ID, MOTOR_CAN_BUS, false, "right back drive motor"),
             leftFrontOutput(0),
             leftBackOutput(0),
