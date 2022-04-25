@@ -73,6 +73,8 @@ int main()
     initializeIo(drivers);
     src::Control::initializeSubsystemCommands(drivers);
 
+    bool aSet = true;
+
 #ifdef PLATFORM_HOSTED
     tap::motorsim::SimHandler::resetMotorSims();
     // Blocking call, waits until Windows Simulator connects.
@@ -92,6 +94,10 @@ int main()
             PROFILE(drivers->profiler, drivers->terminalSerial.update, ());
         }
         modm::delay_us(10);
+        modm::delay_ms(1000/2);
+        drivers->leds.set(tap::gpio::Leds::Red, !aSet);
+        drivers->leds.set(tap::gpio::Leds::Blue, !aSet);
+        aSet = !aSet;
     }
     return 0;
 }
