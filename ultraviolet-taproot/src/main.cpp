@@ -95,8 +95,8 @@ int main()
         }
         modm::delay_us(10);
         modm::delay_ms(1000/2);
-        drivers->leds.set(tap::gpio::Leds::Red, !aSet);
-        drivers->leds.set(tap::gpio::Leds::Blue, !aSet);
+        //drivers->leds.set(tap::gpio::Leds::Red, !aSet);
+        //drivers->leds.set(tap::gpio::Leds::Blue, !aSet);
         aSet = !aSet;
     }
     return 0;
