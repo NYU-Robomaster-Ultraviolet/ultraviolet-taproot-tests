@@ -35,10 +35,10 @@ ChassisSubsystem chassis(drivers());
 ChassisTankDriveCommand chassisDriveCommand(drivers(), &chassis);
 
 // Define command mappings here -------------------------------------------
-/*HoldCommandMapping leftSwitchUp(
+HoldCommandMapping leftSwitchUp(
     drivers(),
     {&chassisDriveCommand},
-    RemoteMapState(Remote::Switch::LEFT_SWITCH, Remote::SwitchState::UP));*/
+    RemoteMapState(Remote::Switch::LEFT_SWITCH, Remote::SwitchState::UP));
 
 // Register subsystems here -----------------------------------------------
 void registerSubsystems(src::Drivers *drivers) {
@@ -62,7 +62,7 @@ void startupCommands(src::Drivers *drivers) {
 
 // Register IO mappings here -----------------------------------------------
 void registerIOMappings(src::Drivers *drivers) {
-    //drivers->commandMapper.addMap(&leftSwitchUp);
+    drivers->commandMapper.addMap(&leftSwitchUp);
 }
 
 }  // namespace StandardControl
