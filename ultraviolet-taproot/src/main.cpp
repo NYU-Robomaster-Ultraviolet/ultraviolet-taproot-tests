@@ -94,10 +94,10 @@ int main()
             PROFILE(drivers->profiler, drivers->terminalSerial.update, ());
         }
         modm::delay_us(10);
-        modm::delay_ms(1000/2);
+        //modm::delay_ms(1000/2);
         //drivers->leds.set(tap::gpio::Leds::Red, !aSet);
         //drivers->leds.set(tap::gpio::Leds::Blue, !aSet);
-        aSet = !aSet;
+        //aSet = !aSet;
     }
     return 0;
 }
