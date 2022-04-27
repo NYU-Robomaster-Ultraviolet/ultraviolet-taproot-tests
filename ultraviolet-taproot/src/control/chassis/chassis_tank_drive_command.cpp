@@ -17,21 +17,10 @@ void ChassisTankDriveCommand::initialize() {}
 
 void ChassisTankDriveCommand::execute()
 {   
-    //drivers->leds.set(tap::gpio::Leds::Red, true);
-    //drivers->leds.set(tap::gpio::Leds::Blue, true);
-    /*
-    int16_t leftInput = drivers->remote.getChannel(tap::Remote::Channel::LEFT_VERTICAL); //* ChassisSubsystem::MAX_CURRENT_OUTPUT;
-    int16_t rightInput = drivers->remote.getChannel(tap::Remote::Channel::RIGHT_VERTICAL); //* ChassisSubsystem::MAX_CURRENT_OUTPUT;
+    
+    int16_t leftInput = drivers->remote.getChannel(tap::Remote::Channel::LEFT_VERTICAL) * ChassisSubsystem::MAX_CURRENT_OUTPUT;
+    int16_t rightInput = drivers->remote.getChannel(tap::Remote::Channel::RIGHT_VERTICAL) * ChassisSubsystem::MAX_CURRENT_OUTPUT;
     chassis->setDesiredOutput(leftInput, rightInput);
-    */
-   if(drivers->remote.isConnected() == false)
-   {
-       drivers->leds.set(tap::gpio::Leds::Red, true);
-   }
-   else
-   {
-       drivers->leds.set(tap::gpio::Leds::Red, false);
-   }
 }
 
 void ChassisTankDriveCommand::end(bool)
